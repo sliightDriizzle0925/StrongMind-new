@@ -8,6 +8,16 @@
         <% end %>
     </div>
 
+    <%if @pizza.errors.any? %>
+        <div class="error-messages">
+            <ul>
+                <% @pizza.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
     <div>
         <%= form.submit %>
     </div>
